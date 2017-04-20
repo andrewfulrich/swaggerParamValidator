@@ -29,7 +29,7 @@
  */
 
 const tv4 = require('tv4')
-const swaggerParamParser = require('./swaggerParamParser')
+const swaggerParamParser = require('swagger-param-parser')
 
 module.exports = function makeSwaggerValidator(swagger) {
 
