@@ -1,6 +1,6 @@
 {
   "name": "swagger-param-validator",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "validates request params based on a given swagger doc",
   "main": "validator.js",
   "scripts": {
