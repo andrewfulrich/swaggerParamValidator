@@ -1,0 +1,26 @@
+{
+  "name": "swagger-param-validator",
+  "version": "1.0.1",
+  "description": "validates request params based on a given swagger doc",
+  "main": "validator.js",
+  "scripts": {
+    "test": "tape tests/*.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewfulrich/swaggerParamValidator.git"
+  },
+  "author": "Andrew Ulrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrewfulrich/swaggerParamValidator/issues"
+  },
+  "homepage": "https://github.com/andrewfulrich/swaggerParamValidator#readme",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
+  },
+  "dependencies": {
+    "tv4": "^1.3.0"
+  }
+}
