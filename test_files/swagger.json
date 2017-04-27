@@ -1,0 +1,168 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "test",
+    "version": "1.0"
+  },
+  "basePath": "/api",
+  "paths": {
+    "/testNode0": {
+      "get": {
+        "operationId": "findTestNode0",
+        "x-swagger-router-controller": "testNode0",
+        "summary": "find testNode0",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "description": "max number of results to return, set to 0 for no max",
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "description": "return all results after a certain offset",
+            "type": "integer",
+            "minimum": 0
+          },
+          {
+            "name": "orderBy",
+            "in": "query",
+            "required": false,
+            "description": "sort by this field, defaults to sorting by id",
+            "type": "string",
+            "enum": [
+              "id",
+              "testEdge1",
+              "testEdge2"
+            ]
+          },
+          {
+            "name": "isAscOrder",
+            "in": "query",
+            "required": false,
+            "description": "whether to sort in ascending order or descending order",
+            "type": "boolean"
+          },
+          {
+            "name": "id",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "testEdge1",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "testEdge2",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 GET OK response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "rowCount": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "results": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/testNode0"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404 (Not Found) The requested resource was not found"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    },
+    "/testNode0/{id}": {
+      "delete": {
+        "operationId": "deleteTestNode0",
+        "x-swagger-router-controller": "testNode0",
+        "summary": "delete a given testNode0",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204 (No Content) The server successfully processed the request and is not returning any content."
+          },
+          "404": {
+            "description": "404 (Not Found) The requested resource was not found"
+          },
+          "default": {
+            "description": "unexpected error",
+            "schema": {
+              "$ref": "#/definitions/Error"
+            }
+          }
+        }
+      }
+    }
+  },
+  "consumes": [
+    "application/x-www-form-urlencoded"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "definitions": {
+    "testNode0": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "testEdge1": {
+          "type": "string"
+        },
+        "testEdge2": {
+          "type": "string"
+        }
+      }
+    },
+    "Error": {
+      "type": "object",
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
