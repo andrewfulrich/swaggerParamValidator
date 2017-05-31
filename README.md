@@ -14,3 +14,6 @@ app.post('/api/doSomething',sanitizer,validator.validateAsMiddleware,(req,res)=>
 res.send('if you've gotten this far, your post was valid')
 })
 ```
+
+##Changes
+1.1.0 added support for json schema string formats such as "uri" and "date-time"

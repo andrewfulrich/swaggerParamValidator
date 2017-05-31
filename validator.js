@@ -29,6 +29,7 @@
  */
 
 const tv4 = require('tv4')
+tv4.addFormat(require('tv4-formats'))
 const swaggerParamParser = require('swagger-param-parser')
 
 module.exports = function makeSwaggerValidator(swagger) {
