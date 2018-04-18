@@ -54,7 +54,8 @@ module.exports = function makeSwaggerValidator(swagger) {
     }
 
     if (req.method.toLowerCase() == 'put') {
-      const primaryKeyName = swaggerParamParser.findPrimaryKey(swaggerParams).name
+      const primaryKey = swaggerParamParser.findPrimaryKey(swaggerParams)
+      const primaryKeyName = primaryKey ? primaryKey.name : undefined
       const toUpdate = Object.keys(req.body).filter((c) => c !== primaryKeyName)
       if (toUpdate.length == 0) {
         throw new ValidationErrors([{
